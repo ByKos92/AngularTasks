@@ -18,25 +18,19 @@ export class PriceComponent implements OnInit {
     if (!reg.test(this.inputText)) {
       this.result = 'Некорректные данные для форматирования';
     } else {
-      console.log(reg.test(this.inputText));
+      if (this.inputText.includes('.') || this.inputText.includes(',')) {
+        this.inputText.replace(',', '.').replace(/ /g, '');
+        this.inputText = this.inputText.substring(
+          0,
+          this.inputText.indexOf('.') + 4
+        );
+      }
       this.result = new Intl.NumberFormat('ru', {
         maximumFractionDigits: 2,
       })
-        .format(parseFloat(this.inputText.replace(',', '.').replace(/ /g, '')))
+        .format(parseFloat(this.inputText))
         .replace(',', '.');
     }
-
-    //   let num = parseFloat(this.inputText);
-    // if (num) {
-    //   this.result = new Intl.NumberFormat('ru', {
-    //     maximumFractionDigits: 2,
-    //   })
-    //     .format(num)
-    //     .replace(',', '.');
-    //   } else {
-    //     this.result = 'Некорректные данные для форматирования';
-    //     console.log('4', this.result);
-    //   }
   }
 
   inputHandler(value: string) {

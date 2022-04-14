@@ -10,8 +10,9 @@
       class="form-control"
       placeholder="в фортате ddd или ddd.ddd"
       (input)="inputHandler(userInput.value)"
+      (keydown.enter)="format()"
     />
-    <button type="button" class="btn btn-primary" (click)="format()">
+    <button type="submit" class="btn btn-primary" (click)="format()">
       Форматировать
     </button>
   </div>
