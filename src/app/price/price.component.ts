@@ -18,8 +18,9 @@ export class PriceComponent implements OnInit {
     if (!reg.test(this.inputText)) {
       this.result = 'Некорректные данные для форматирования';
     } else {
+      this.inputText = this.inputText.replace(/ /g, '');
       if (this.inputText.includes('.') || this.inputText.includes(',')) {
-        this.inputText.replace(',', '.').replace(/ /g, '');
+        this.inputText = this.inputText.replace(',', '.');
         this.inputText = this.inputText.substring(
           0,
           this.inputText.indexOf('.') + 4
