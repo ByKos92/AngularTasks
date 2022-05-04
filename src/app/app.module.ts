@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { AccordionModule } from 'primeng/accordion';
+import { MenuItem } from 'primeng/api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,7 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'rec', component: RecComponent },
   { path: 'price', component: PriceComponent },
+  { path: 'test', component: TestComponent },
 ];
 @NgModule({
   declarations: [

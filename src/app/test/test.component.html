@@ -1,1 +1,34 @@
-<p>test works!</p>
+<div class="d-flex justify-content-between m-5">
+  <button class="btn btn-primary">Test1</button>
+  <button class="btn btn-secondary">Test2</button>
+  <button class="btn btn-success">Test3</button>
+  <button class="btn btn-danger">Test4</button>
+  <button class="btn btn-warning">Test5</button>
+  <button class="btn btn-info">Test6</button>
+  <button class="btn btn-light">Test7</button>
+  <button class="btn btn-dark btn-sm">Test8</button>
+  <button class="btn btn-link">Test9</button>
+</div>
+<div class="m-3">
+  <label for="" class="form-label"></label>
+  <input
+    type="text"
+    class="form-control"
+    name="inputText"
+    id="txt"
+    aria-describedby="helpId"
+    placeholder="Поле для текста"
+    #txt
+    (input)="println(txt.value)"
+  />
+  <small id="helpId" class="form-text text-muted">Some text</small>
+</div>
+
+<div class="d-flex justify-content-center">{{ myText }}</div>
+<div class="row">
+  <div class="col m-3" *ngFor="let num of array">
+    {{ num }} <button class="btn btn-primary">Button #{{ num }}</button>
+  </div>
+</div>
+
+<ng-template></ng-template>
